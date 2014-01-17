@@ -1,0 +1,36 @@
+from django.db import models
+from django.utils.translation import ugettext_lazy as _
+from django.core.urlresolvers import reverse
+from mezzanine.pages.models import Page, RichText
+from mezzanine.core.models import Ownable
+
+from mezzanine.generic.fields import CommentsField, RatingField, FileField
+from mezzanine.utils.models import AdminThumbMixin, upload_to
+
+# Create your models here.
+
+class GardenPage(Page, RichText, Ownable):
+    '''
+    A Garden blog page
+    '''
+    allow_comments = models.BooleanField(verbose_name=_("Allow comments"),
+                                         default=True)
+    comments = CommentsField(verbose_name=_("Comments"))
+    rating = RatingField(verbose_name=_("Rating"))
+    featured_image = FileField(verbose_name=_("Featured Image"),
+        upload_to=upload_to("garden.GargenPage.featured_image", "garden"),
+        format="Image", max_length=255, null=True, blank=True)
+    #related_posts = models.ManyToManyField("self",
+    #                             verbose_name=_("Related posts"), blank=True)
+
+    admin_thumb_field = "featured_image"
+
+   class Meta:
+        verbose_name = _("Garden post")
+        verbose_name_plural = _("Garden posts")
+        ordering = ("-publish_date",)
+
+    #@models.permalink
+    def get_absolute_url(self):
+        #return ("garden_detail", (), {"slug": self.slug})
+        return reverse("garden_detail", kwargs={"slug": self.slug})

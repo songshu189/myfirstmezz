@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block meta_title %}{% trans "Home" %}{% endblock %}
+{% block title %}{% trans "Home" %}{% endblock %}
+
+{% block breadcrumb_menu %}
+<li class="active">{% trans "Home" %}</li>
+{% endblock %}
+
+{% block main %}
+{% blocktrans %}
+<h2>Welcome!</h2>
+<p>
+    Sunny is the nick name of Dr. Yujing Sun. She likes this name because she love sunny days, sunny moods and a sunny life.  She had a certain period in her life when she was really frustrated, baffled and depressed by the difficulties in her life. It took her such a long time to realize that while pain is part of life, suffering is a choice. It was during these depressed time that sunny started looking for everything that can help her to fight depression. This website is her personal collection of methods and strategies that gave her strength, built her confidence and helped her step out of depression.</p>
+<p> This website is a warm welcome from sunny to invite you to start your own journey toward healing and wellness, to have joy and inner peace in your everyday life. It is called invitation because it is just an invitation; it is up to you to make the decision. I wish you have a good time! 
+</p>
+<ul>
+    <li><a href="/blog">Mindful Journal</a></li>
+    <li><a href="/mbsr-program">MBSR Program</a></li>
+    <li><a href="/mindful-bryoga">Mindful Yoga</a></li>
+    <li><a href="/integrative-cancer-research">Integrative Cancer Research</a></li>
+    <li><a href="/gardening">Gardening</a></li>
+</ul>
+{% endblocktrans %}
+{% endblock %}
