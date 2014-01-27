@@ -47,48 +47,25 @@
 </head>
 <body id="{% block body_id %}body{% endblock %}"  >
 <div id="wrap">
-<div class="navbar navbar-fixed-top">
+
+<div class="navbar">
  <div class="navbar-inner">
   <div class="container">
-    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-    </a>
-    <div class="span11" ><div class="row">
-       {% if settings.SITE_TITLE %}
-         <div class="span3">
-           <br/>
-           <a class="brand" style="font-size: 2.5em; color: Orange;" href="/">{{ settings.SITE_TITLE }}</a>
-         </div>
-       {% endif %}
-       <div class="span8" >
-         <div class="row">
-           <div class="span4" style="text-align: center;">
-             {% if settings.SITE_TAGLINE %}
-              <p class="navbar-text" style="line-height: 20px; font-size: 1.2em; color: Orange; float:none;">{{ settings.SITE_TAGLINE | safe }}</p>
-             {% endif %}
-           </div>
 
-           <div class="span4">
-            {% search_form "all" %}
-            {% nevercache %}
-            {% include "accounts/includes/user_panel_nav.html" %}
-            {% endnevercache %}
-           </div>
-         </div>
-        <div class="row">
-          <div class="nav-collapse collapse" >
-            {% page_menu "pages/menus/dropdown.html" %}
-          </div>
-        </div>
-      </div>
-    </div></div>
+     <div class="row mybrandrow">
+       <a class="brand mybrand" href="/">SunnyInvitation</a>
+     </div>
+     <div class="row">
+       <p class="navbar-text mytag-text">Together, for healing and wellness Together, for joy and inner peace</p>
+     </div>
+    <div class="row" >
+      {% page_menu "pages/menus/primary.html" %}
+   </div>
+
   </div>
  </div>
 </div>
 
-<div class="mycontainer">
 <div class="container heading" >
 
 {% nevercache %}
@@ -128,12 +105,13 @@
 
 </div>
 </div>
+<div id="mypush"></div>
 </div>
-</div>
+
 <div class="footer">
 <div class="container" >
 <!--{% page_menu "pages/menus/footer.html" %}-->
-<p class="center-text">
+<div class="center-text">
     {% trans "Powered by" %}
     <a href="http://mezzanine.jupo.org">Mezzanine</a>{% ifinstalled cartridge.shop %},
     <a href="http://cartridge.jupo.org">Cartridge</a>{% endifinstalled %}
@@ -147,7 +125,7 @@
     {% endifinstalled %}
     <span class="separator">|</span>
     Design By <a href="/">SunnyInvitation</a>
-</p>
+</div>
 </div>
 </div>
 

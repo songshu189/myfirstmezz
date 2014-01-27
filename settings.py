@@ -316,21 +316,12 @@ RICHTEXT_FILTER_LEVEL = 3
 PAGEDOWN_SERVER_SIDE_PREVIEW = True
 
 
-ALLOWED_HOSTS = ('localhost', '.local')
+ALLOWED_HOSTS = ('127.0.0.1', )
 
 SEARCH_MODEL_CHOICES = []
 PAGE_MENU_TEMPLATES = ( (1, "Top navigation bar", "pages/menus/dropdown.html"), )
 
 
-###################
-# email SETTINGS #
-###################
-
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_HOST_USER = 'mikeliu.liu8@gmail.com'
-EMAIL_HOST_PASSWORD = 'ranran9769'
-EMAIL_USE_TLS = True
 
 ###################
 # DEPLOY SETTINGS #
@@ -339,23 +330,23 @@ EMAIL_USE_TLS = True
 # These settings are used by the default fabfile.py provided.
 # Check fabfile.py for defaults.
 
-FABRIC = {
-    "SSH_USER": "sunny", # SSH username
-    "SSH_PASS":  "invitation7368", # SSH password (consider key-based authentication)
-    "SSH_KEY_PATH":  "", # Local path to SSH key file, for key-based auth
-    "HOSTS": ['sunnyinvitation.com',], # List of hosts to deploy to
-    "VIRTUALENV_HOME":  "", # Absolute remote path for virtualenvs
-    "PROJECT_NAME": "sunnyweb", # Unique identifier for project
-    "REQUIREMENTS_PATH": "requirements/project.txt", # Path to pip requirements, relative to project
-    "GUNICORN_PORT": 8000, # Port gunicorn will listen on
-    "LOCALE": "en_US.UTF-8", # Should end with ".UTF-8"
-    "LIVE_HOSTNAME": "www.example.com", # Host for public site.
-    "REPO_URL": "", # Git or Mercurial remote repo URL for the project
-    "DB_PASS": "", # Live database password
-    "ADMIN_PASS": "", # Live admin user password
-    "SECRET_KEY": SECRET_KEY,
-    "NEVERCACHE_KEY": NEVERCACHE_KEY,
-}
+#FABRIC = {
+#    "SSH_USER": "sunny", # SSH username
+#    "SSH_PASS":  "invitation7368", # SSH password (consider key-based authentication)
+#    "SSH_KEY_PATH":  "", # Local path to SSH key file, for key-based auth
+#    "HOSTS": ['sunnyinvitation.com',], # List of hosts to deploy to
+#    "VIRTUALENV_HOME":  "", # Absolute remote path for virtualenvs
+#    "PROJECT_NAME": "sunnyweb", # Unique identifier for project
+#    "REQUIREMENTS_PATH": "requirements/project.txt", # Path to pip requirements, relative to project
+#    "GUNICORN_PORT": 8000, # Port gunicorn will listen on
+#    "LOCALE": "en_US.UTF-8", # Should end with ".UTF-8"
+#    "LIVE_HOSTNAME": "www.example.com", # Host for public site.
+#    "REPO_URL": "", # Git or Mercurial remote repo URL for the project
+#    "DB_PASS": "", # Live database password
+#    "ADMIN_PASS": "", # Live admin user password
+#    "SECRET_KEY": SECRET_KEY,
+#    "NEVERCACHE_KEY": NEVERCACHE_KEY,
+#}
 
 
 ##################
