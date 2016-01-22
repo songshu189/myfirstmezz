@@ -7,7 +7,15 @@ register_setting(
     editable=False,
     #default=("margin-top", "margin-bottom", "margin-left", "margin-right",
     #    "float", "vertical-align", "border", "margin", "height", "width"),
-    default=("height", "width", ),
+    default=("height", "width", "controls", ),
+    append=True,
+)
+
+register_setting(
+    name="RICHTEXT_ALLOWED_ATTRIBUTES",
+    description=_("List of HTML attributes that won't be stripped from ``RichtextField`` instances."),
+    editable=False,
+    default=("controls", ),
     append=True,
 )
 
@@ -17,6 +25,6 @@ register_setting(
     editable=False,
     #default=("margin-top", "margin-bottom", "margin-left", "margin-right",
     #    "float", "vertical-align", "border", "margin", "height", "width"),
-    default=("iframe", ),
+    default=("iframe", "audio", "source", ),
     append=True,
 )

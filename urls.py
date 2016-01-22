@@ -2,6 +2,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
+from django.http import HttpResponse
 from mezzanine.core.views import direct_to_template
 import mezzanine_pagedown.urls
 
@@ -84,6 +85,7 @@ urlpatterns = patterns("",
 
     # ("^%s/" % settings.SITE_PREFIX, include("mezzanine.urls"))
 
+    # ("^robots.txt$", lambda r: HttpResponse("User-agent: *\nDisalloow: /", mimetype="text/plain")),
 )
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error
