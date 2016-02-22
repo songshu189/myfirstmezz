@@ -79,6 +79,9 @@ div.heading h1 {
     text-align: left;
 }
 
+.navbar-nav li {
+    margin: 7px 0;
+}
 
 @media (max-width: 800px) {
   .navbar .mybrand {
